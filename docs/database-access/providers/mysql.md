@@ -29,7 +29,7 @@ Usage
 <!-- -->
 
 ``` text
-"Server=hostname;" + "Database=database;" + "User ID=username;" + "Password=password;" + "Pooling=false"
+"Server=hostname;" + "Database=database;" + "User ID=username;" + "Password=password;" + "Pooling=false;" + "SslMode=none";
 ```
 
 -   Parameters:
@@ -64,11 +64,12 @@ gacutil -i MySql.Data.dll
     public static void Main(string[] args)
     {
        string connectionString =
-          "Server=localhost;" +
+          "Server=127.0.0.1;" +
           "Database=test;" +
           "User ID=myuserid;" +
           "Password=mypassword;" +
-          "Pooling=false";
+          "Pooling=false"+
+		      "SslMode=none";
        IDbConnection dbcon;
        dbcon = new MySqlConnection(connectionString);
        dbcon.Open();
